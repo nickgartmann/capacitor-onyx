@@ -1,10 +1,16 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { OnyxPlugin } from './definitions';
+import type { DrawAreaOptions, OnyxPlugin, StrokeOptions } from './definitions';
 
 export class OnyxWeb extends WebPlugin implements OnyxPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async start(_options: DrawAreaOptions): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
+  async stop(): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
+  async configureStroke(_options: StrokeOptions): Promise<void> {
+    throw new Error('Method not implemented.');
   }
 }
+
