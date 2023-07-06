@@ -1,6 +1,6 @@
-# onyx
+# capacitor-onyx
 
-Provides an interface to the Onyx SDK
+Provides an interface to the Onyx SDK for the Boox series of tablets
 
 ## Install
 
