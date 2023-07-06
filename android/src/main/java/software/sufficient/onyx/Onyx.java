@@ -199,7 +199,7 @@ public class Onyx {
     public JSObject touchPointToJSObject(TouchPoint touchPoint) {
         JSObject ret = new JSObject();
         ret.put("x", Math.round(((touchPoint.x / this.density) - this.x) * 10) / 10D);
-        ret.put("y", Math.round(((touchPoint.y / this.density) - this.y + 1) * 10) / 10D);
+        ret.put("y", Math.round(((touchPoint.y / this.density) - this.y) * 10) / 10D);
         ret.put("size", touchPoint.size);
         ret.put("pressure", touchPoint.pressure);
         ret.put("timestamp", touchPoint.timestamp);
