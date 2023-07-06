@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sufficient-software/capacitor-onyx.git"
+    "url": "git+https://github.com/nickgartmann/capacitor-onyx.git"
   },
   "bugs": {
-    "url": "https://github.com/sufficient-software/capacitor-onyx/issues"
+    "url": "https://github.com/nickgartmann/capacitor-onyx/issues"
   },
   "keywords": [
     "capacitor",
