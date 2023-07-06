@@ -5,7 +5,7 @@ Provides an interface to the Onyx SDK
 ## Install
 
 ```bash
-npm install onyx
+npm install capacitor-onyx
 npx cap sync
 ```
 

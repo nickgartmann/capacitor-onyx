@@ -3,7 +3,6 @@ package software.sufficient.onyx;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.View;
-
 import com.getcapacitor.JSObject;
 import com.getcapacitor.JSValue;
 import com.getcapacitor.Plugin;
@@ -29,7 +28,7 @@ public class OnyxPlugin extends Plugin {
         implementation.setErasingEndListener(this::notifyOnErasingEnd);
     }
 
-    @PluginMethod()
+    @PluginMethod
     public void start(PluginCall call) {
         Float x = call.getFloat("x");
         Float y = call.getFloat("y");
@@ -41,13 +40,13 @@ public class OnyxPlugin extends Plugin {
         call.resolve();
     }
 
-    @PluginMethod()
+    @PluginMethod
     public void stop(PluginCall call) {
         implementation.stop();
         call.resolve();
     }
 
-    @PluginMethod()
+    @PluginMethod
     public void configureStroke(PluginCall call) {
         if (call.hasOption("width")) {
             Float width = call.getFloat("width");
@@ -61,39 +60,38 @@ public class OnyxPlugin extends Plugin {
     }
 
     private void notifyOnStroke(JSObject stroke) {
-        if(hasListeners("onStroke")) {
+        if (hasListeners("onStroke")) {
             notifyListeners("onStroke", stroke);
         }
     }
+
     private void notifyOnDrawingStart(JSObject point) {
-        if(hasListeners("onDrawingStart")) {
+        if (hasListeners("onDrawingStart")) {
             notifyListeners("onDrawingStart", point);
         }
     }
 
     private void notifyOnDrawingEnd() {
-        if(hasListeners("onDrawingEnd")) {
+        if (hasListeners("onDrawingEnd")) {
             notifyListeners("onDrawingEnd", null);
         }
     }
+
     private void notifyOnErase(JSObject stroke) {
-        if(hasListeners("onErase")) {
+        if (hasListeners("onErase")) {
             notifyListeners("onErase", stroke);
         }
     }
+
     private void notifyOnErasingStart(JSObject point) {
-        if(hasListeners("onErasingStart")) {
+        if (hasListeners("onErasingStart")) {
             notifyListeners("onErasingStart", point);
         }
     }
 
     private void notifyOnErasingEnd() {
-        if(hasListeners("onErasingEnd")) {
+        if (hasListeners("onErasingEnd")) {
             notifyListeners("onErasingEnd", null);
         }
     }
-
-
-
-
 }

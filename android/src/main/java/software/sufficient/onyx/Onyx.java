@@ -3,7 +3,6 @@ package software.sufficient.onyx;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
-
 import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Logger;
@@ -11,7 +10,6 @@ import com.onyx.android.sdk.data.note.TouchPoint;
 import com.onyx.android.sdk.pen.RawInputCallback;
 import com.onyx.android.sdk.pen.TouchHelper;
 import com.onyx.android.sdk.pen.data.TouchPointList;
-
 import java.util.ArrayList;
 
 public class Onyx {
@@ -27,7 +25,9 @@ public class Onyx {
     interface DrawingStartListener {
         void onDrawingStart(JSObject point);
     }
+
     private DrawingStartListener drawingStartListener;
+
     public void setDrawingStartListener(DrawingStartListener listener) {
         this.drawingStartListener = listener;
     }
@@ -35,7 +35,9 @@ public class Onyx {
     interface DrawingEndListener {
         void onDrawingEnd();
     }
+
     private DrawingEndListener drawingEndListener;
+
     public void setDrawingEndListener(DrawingEndListener listener) {
         this.drawingEndListener = listener;
     }
@@ -43,7 +45,9 @@ public class Onyx {
     interface DrawingStrokeListener {
         void onStroke(JSObject list);
     }
+
     private DrawingStrokeListener drawingStrokeListener;
+
     public void setDrawingStrokeListener(DrawingStrokeListener drawingStrokeListener) {
         this.drawingStrokeListener = drawingStrokeListener;
     }
@@ -51,7 +55,9 @@ public class Onyx {
     interface ErasingStartListener {
         void onErasingStart(JSObject point);
     }
+
     private ErasingStartListener erasingStartListener;
+
     public void setErasingStartListener(ErasingStartListener listener) {
         this.erasingStartListener = listener;
     }
@@ -59,7 +65,9 @@ public class Onyx {
     interface ErasingEndListener {
         void onErasingEnd();
     }
+
     private ErasingEndListener erasingEndListener;
+
     public void setErasingEndListener(ErasingEndListener listener) {
         this.erasingEndListener = listener;
     }
@@ -67,7 +75,9 @@ public class Onyx {
     interface ErasingStrokeListener {
         void onErase(JSObject list);
     }
+
     private ErasingStrokeListener erasingStrokeListener;
+
     public void setErasingStrokeListener(ErasingStrokeListener erasingStrokeListener) {
         this.erasingStrokeListener = erasingStrokeListener;
     }
@@ -169,8 +179,8 @@ public class Onyx {
     }
 
     public void setStrokeStyle(String style) {
-        switch(style) {
-           case "pencil":
+        switch (style) {
+            case "pencil":
                 this.touchHelper.setStrokeStyle(TouchHelper.STROKE_STYLE_PENCIL);
                 break;
             case "fountain":
@@ -210,10 +220,9 @@ public class Onyx {
 
     private JSArray touchpointListToJSArray(TouchPointList list) {
         JSArray ret = new JSArray();
-        for(int i=0;i<list.size();++i) {
+        for (int i = 0; i < list.size(); ++i) {
             ret.put(touchPointToJSObject(list.get(i)));
         }
         return ret;
     }
-
 }

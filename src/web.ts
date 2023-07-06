@@ -13,4 +13,3 @@ export class OnyxWeb extends WebPlugin implements OnyxPlugin {
     throw new Error('Method not implemented.');
   }
 }
-
